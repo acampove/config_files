@@ -1,0 +1,66 @@
+# ---------
+plotting_run12: &plot_r12
+    definitions:
+        mass : B_const_mass_M[0]
+    plots:
+        mass :
+            binning    : [5000, 6000, 40]
+            yscale     : 'linear'
+            labels     : ['$M_{DTF}(B^+)$', 'Entries']
+            normalized : true
+# ---------
+plotting_run3: &plot_run3
+    definitions:
+        mass : B_nopv_const_mass_M[0]
+    plots:
+        mass :
+            binning    : [5000, 6000, 40]
+            yscale     : 'linear'
+            labels     : ['$M_{DTF-noPV}(B^+)$', 'Entries']
+            normalized : true
+# ---------
+methods:
+  ctrl : &methods_ctrl
+    bkg_cat : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
+    true_id : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443 && TMath::Abs(H_TRUEID) == 321 && TMath::Abs(H_MC_MOTHER_ID) == 521 
+# ---------
+max_entries : 1000
+samples:
+  ctrl_run2:
+    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/truth_eff/v2/ctrl/v10.21p2/2011_ETOS/*.root
+    tree_path : ETOS
+    methods :
+      <<: *methods_ctrl
+    plot:
+      <<: *plot_r12
+      saving:
+        plt_dir : check_truth/ctrl_run2
+  ctrl_run3:
+    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/ctrl_BuToKpEE_ana/v2/2024_ETOS/*.root
+    tree_path : ETOS
+    methods :
+      <<: *methods_ctrl
+    plot:
+      <<: *plot_run3
+      saving:
+        plt_dir : check_truth/ctrl_run3
+  ctrl_pi_run3:
+    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/ctrl_pi_BuToKpEE_ana/v2/2024_ETOS/*.root
+    tree_path : ETOS
+    methods :
+      bkg_cat : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
+      true_id : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443 && TMath::Abs(H_TRUEID) == 211 && TMath::Abs(H_MC_MOTHER_ID) == 521
+    plot:
+      <<: *plot_run3
+      saving:
+        plt_dir : check_truth/ctrl_pi_run3
+  bd_kst_ee:
+    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/bdks_jpsi_B0ToKpPimEE_ana/v2/2024_ETOS/*.root
+    tree_path : ETOS
+    methods :
+      bkg_cat : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
+      true_id : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H1_MC_MOTHER_ID) == 313 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H2_MC_MOTHER_ID) == 313
+    plot:
+      <<: *plot_run3
+      saving:
+        plt_dir : check_truth/bd_kst_ee
