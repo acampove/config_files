@@ -4,46 +4,75 @@ plotting_run12: &plot_r12
         mass : B_const_mass_M[0]
     plots:
         mass :
-            binning    : [5000, 6000, 40]
+            binning    : [5000, 6000, 100]
             yscale     : 'linear'
             labels     : ['$M_{DTF}(B^+)$', 'Entries']
-            normalized : true
+            normalized : False 
 # ---------
 plotting_run3: &plot_run3
     definitions:
-        mass : B_nopv_const_mass_M[0]
+        mass : B_nopv_const_mass_M
     plots:
         mass :
-            binning    : [5000, 6000, 40]
+            binning    : [5000, 6000, 100]
             yscale     : 'linear'
             labels     : ['$M_{DTF-noPV}(B^+)$', 'Entries']
-            normalized : true
+            normalized : False 
 # ---------
 methods:
-  ctrl : &methods_ctrl
-    bkg_cat : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
-    true_id : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443 && TMath::Abs(H_TRUEID) == 321 && TMath::Abs(H_MC_MOTHER_ID) == 521 
+  bp_kp_jpsi_ee : &bp_kp_jpsi_ee
+    bkg_cat           : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
+    true_id_base      : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11
+    true_id_hadid     : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H_TRUEID) == 321
+    true_id_hadmother : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H_TRUEID) == 321 && TMath::Abs(H_MC_MOTHER_ID) == 521 
+    true_id_l1_mother : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H_TRUEID) == 321 && TMath::Abs(H_MC_MOTHER_ID) == 521 && TMath::Abs(L1_MC_MOTHER_ID) == 443
+    true_id_l2_mother : TMath::Abs(B_TRUEID) == 521 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 521 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H_TRUEID) == 321 && TMath::Abs(H_MC_MOTHER_ID) == 521 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443
+  bd_kst_jpsi_ee: &bd_kst_jpsi_ee
+      bkg_cat             : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
+      true_id_base        : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 
+      true_id_kaonid      : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321
+      true_id_pionid      : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H2_TRUEID) == 211
+      true_id_kaon_mother : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H1_MC_MOTHER_ID) == 313
+      true_id_pion_mother : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H1_MC_MOTHER_ID) == 313 && TMath::Abs(H2_MC_MOTHER_ID) == 313
+      true_id_l1_mother   : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H1_MC_MOTHER_ID) == 313 && TMath::Abs(H2_MC_MOTHER_ID) == 313 && TMath::Abs(L1_MC_MOTHER_ID) == 443
+      true_id_l2_mother   : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H1_MC_MOTHER_ID) == 313 && TMath::Abs(H2_MC_MOTHER_ID) == 313 && TMath::Abs(L1_MC_MOTHER_ID) == 443  && TMath::Abs(L1_MC_MOTHER_ID) == 443
 # ---------
-max_entries : 1000
+max_entries : 30000
 samples:
-  ctrl_run2:
-    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/truth_eff/v2/ctrl/v10.21p2/2011_ETOS/*.root
-    tree_path : ETOS
+  bp_kp_jpsi_ee_run2:
+    #file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/truth_eff/v2/ctrl/v10.21p2/2011_ETOS/*.root
+    #tree_path : ETOS
+    file_path : /publicfs/ucas/user/campoverde/Data/RK/ctrl_ee/v10.21/2018.root
+    tree_path : KEE 
     methods :
-      <<: *methods_ctrl
+      <<: *bp_kp_jpsi_ee
     plot:
       <<: *plot_r12
       saving:
         plt_dir : check_truth/ctrl_run2
-  ctrl_run3:
-    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/ctrl_BuToKpEE_ana/v2/2024_ETOS/*.root
-    tree_path : ETOS
+  bp_kp_jpsi_ee_run3:
+    #file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/ctrl_BuToKpEE_ana/v2/2024_ETOS/*.root
+    #tree_path : ETOS
+    file_path : /publicfs/ucas/user/campoverde/Data/RK/ctrl_BuToKpEE_ana_ee/v2/2024.root
+    tree_path : KEE 
     methods :
-      <<: *methods_ctrl
+      <<: *bp_kp_jpsi_ee
     plot:
       <<: *plot_run3
       saving:
         plt_dir : check_truth/ctrl_run3
+  bd_kst_jpsi_ee:
+    #file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/bdks_jpsi_B0ToKpPimEE_ana/v2/2024_ETOS/*.root
+    #tree_path : ETOS
+    file_path : /publicfs/ucas/user/campoverde/Data/RK/bdks_jpsi_B0ToKpPimEE_ana_ee/v2/2024.root
+    tree_path : KEE 
+    methods :
+      <<: *bd_kst_jpsi_ee
+    plot:
+      <<: *plot_run3
+      saving:
+        plt_dir : check_truth/bd_kst_ee
+unused:
   ctrl_pi_run3:
     file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/ctrl_pi_BuToKpEE_ana/v2/2024_ETOS/*.root
     tree_path : ETOS
@@ -54,13 +83,4 @@ samples:
       <<: *plot_run3
       saving:
         plt_dir : check_truth/ctrl_pi_run3
-  bd_kst_ee:
-    file_path : /publicfs/lhcb/user/campoverde/Data/cache/tools/apply_selection/r_fits/bdks_jpsi_B0ToKpPimEE_ana/v2/2024_ETOS/*.root
-    tree_path : ETOS
-    methods :
-      bkg_cat : B_BKGCAT == 0 || B_BKGCAT == 10 || B_BKGCAT == 50
-      true_id : TMath::Abs(B_TRUEID) == 511 && TMath::Abs(Jpsi_TRUEID) == 443 && TMath::Abs(Jpsi_MC_MOTHER_ID) == 511 && TMath::Abs(L1_TRUEID) == 11 && TMath::Abs(L2_TRUEID) == 11 && TMath::Abs(L1_MC_MOTHER_ID) == 443 && TMath::Abs(L2_MC_MOTHER_ID) == 443 && TMath::Abs(H1_TRUEID) == 321 && TMath::Abs(H1_MC_MOTHER_ID) == 313 && TMath::Abs(H2_TRUEID) == 211 && TMath::Abs(H2_MC_MOTHER_ID) == 313
-    plot:
-      <<: *plot_run3
-      saving:
-        plt_dir : check_truth/bd_kst_ee
+
