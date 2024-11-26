@@ -1,0 +1,167 @@
+# -----------------------------------------
+# Needed to find where files are in EOS
+# -----------------------------------------
+paths:
+  pipeline_dir : /eos/lhcb/wg/dpa/wp2/ci
+  analysis_dir : rd_ap_2024
+# -----------------------------------------
+# Each key corresponds to a MC sample, the value is a list of lines that must be found
+# as a tree in the file. If any, then the sample is not signal for any of the HLT2 lines
+# therefore no tree (equivalent to a line) is required to be made
+# -----------------------------------------
+samples:
+  Bd_psi2SKst_ee_eq_DPC:
+    - Hlt2RD_B0ToKpPimEE
+    - Hlt2RD_B0ToKpPimEE_MVA
+  Bu_Kmumu_eq_btosllball05_DPC:
+    - any
+  Bu_Kmumu_eq_PHSP_DPC:
+    - any
+  Bu_Kee_eq_btosllball_DPC:
+    - any
+  Bu_Kee_eq_btosllball05_DPC:
+    - any
+  Bu_JpsiK_mm_eq_DPC:
+    - any
+  Bu_JpsiK_ee_eq_DPC:
+    - any
+  Bu_JpsiPi_ee_eq_DPC:
+    - any
+  Bu_JpsiPi_mm_eq_DPC:
+    - any
+  Bu_psi2SK_mm_eq_DPC:
+    - any
+  Bu_psi2SK_ee_eq_DPC:
+    - any
+  Bs_Jpsiphi_mm_eq_CPV_update2016_dG_eq_0_DPC:
+    - any
+  Bs_Jpsiphi_mm_eq_CPV_update2016_DPC:
+    - any
+  Bs_Jpsiphi_mm_eq_CPV_update2012_DPC:
+    - any
+  Bs_Jpsiphi_ee_eq_CPV_update2012_DPC:
+    - any
+  Lb_JpsipK_ee_eq_phsp_DPC:
+    - any
+  Lb_JpsipK_mm_eq_phsp_DPC:
+    - any
+  Lb_pKee_eq_phsp_DPC:
+    - any
+  Lb_pKmumu_eq_phsp_DPC:
+    - any
+  Bd_JpsiKst_mm_eq_DPC:
+    - any
+  Bd_psi2SKst_mm_eq_DPC:
+    - any
+  Bd_JpsiKst_ee_eq_DPC:
+    - any
+  Bd_Kstmumu_eq_btosllball05_DPC:
+    - any
+  Bd_Kstmumu_flatq2_eq_DPC_MomCut:
+    - any
+  Bd_Kstee_eq_btosllball05_DPC:
+    - any
+  Bd_Kpiee_eq_DPC:
+    - any
+  Bs_phiee_eq_Ball_DPC:
+    - any
+  Bs_phimumu_eq_Ball_DPC:
+    - any
+  Bu_Kstee_KSpi_eq_DPC:
+    - any
+  Bd_JpsiKS_mm_eq_CPV_DPC:
+    - any
+  Bd_JpsiKS_ee_eq_CPV_DPC:
+    - any
+  Lb_JpsiLambda_mm_eq_phsp:
+    - any
+  Lb_JpsiLambda_ee_eq_phsp_DPC:
+    - any
+  Bd_Kstpi0_eplemng_eq_Dalitz_DPC:
+    - any
+  Bu_KpipiJpsi_mumu_eq_DPC_LSFLAT:
+    - any
+  Bu_KpipiJpsi_ee_eq_DPC_LSFLAT:
+    - any
+  Bd_JpsiX_ee_eq_JpsiInAcc:
+    - any
+  Bu_JpsiX_ee_eq_JpsiInAcc:
+    - any
+  Bs_JpsiX_ee_eq_JpsiInAcc:
+    - any
+  Lb_JpsiX_ee_eq_JpsiInAcc:
+    - any
+  Bd_JpsiX_mm_eq_JpsiInAcc:
+    - any
+  Bu_JpsiX_mm_eq_JpsiInAcc:
+    - any
+  Bs_JpsiX_mm_eq_JpsiInAcc:
+    - any
+  Lb_JpsipKX_mm_eq_JpsiInAcc:
+    - any
+  Lb_JpsiX_mm_eq_JpsiInAcc:
+    - any
+  incl_Upsilon_mm_eq_DPC:
+    - any
+  incl_Upsilon2S_mm_eq_DPC:
+    - any
+  incl_Upsilon3S_mm_eq_DPC:
+    - any
+  incl_Jpsi_mm_eq_DPC:
+    - any
+  incl_psi2S_mm_eq_DPC:
+    - any
+  Dst_D0pi_Kpi_eq_DPC:
+    - any
+  Lc_pKpimnres_eq_LHCbAcceptance:
+    - any
+  Bu_Lambdapbarmumu_eq_HELAMP_TightCut:
+    - any
+  Bu_LambdabarpJpsi_mm_eq_HELAMP_TightCut:
+    - any
+  Xib_Ximumu_Lambdapi_eq_phsp_TightCut:
+    - any
+  Xib_JpsiXi_mm_Lambdapi_eq_TightCut:
+    - any
+  Xib_psi2SXi_mm_Lambdapi_eq_TightCut:
+    - any
+  Xib_Xiee_Lambdapi_eq_phsp_TightCut:
+    - any
+  Xib_JpsiXi_ee_Lambdapi_eq_TightCut:
+    - any
+  Xib_psi2SXi_ee_Lambdapi_eq_TightCut:
+    - any
+  Omegab_Omegamumu_LambdaK_eq_phsp_TightCut:
+    - any
+  Omegab_JpsiOmega_mm_LambdaK_eq_phsp_TightCut:
+    - any
+  Omegab_psi2SOmega_mm_LambdaK_eq_phsp_TightCut:
+    - any
+  Xi0_ppi_eq_TightCut:
+    - any
+  Ximn_Lambda0pi_eq_TightCut:
+    - any
+  tau_mumumu_eq_FromB:
+    - any
+  Dpl_taunu_mmm_eq_FromD:
+    - any
+  Dpl_taunu_mmm_eq_FromB:
+    - any
+  Ds_taunu_mmm_eq_FromD:
+    - any
+  Ds_taunu_mmm_eq_FromB:
+    - any
+  Ds_phipi_mm_eq_FromD:
+    - any
+  Ds_phipi_mm_eq_FromB:
+    - any
+  tau_mumumu_eq_DPC:
+    - any
+  Bd_Kstgamma_eq_HighPtGamma_DPC:
+    - any
+  Bd_Kstgamma_eq_HighPtGamma_DPC_SS:
+    - any
+  Bs_phigamma_eq_HighPtGamma_DPC:
+    - any
+  Bs_phigamma_eq_HighPtGamma_DPC_SS:
+    - any
