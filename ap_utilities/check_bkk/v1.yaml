@@ -91,7 +91,6 @@ event_type :
   - '11102021'
   - '13102021'
   - '15102001'
-  - '13144011'
   - '15102011'
   - '11102005'
   - '11102015'
@@ -105,6 +104,7 @@ event_type :
   - '10012005'
   - '10012009'
 event_type_split_sim:
+  # These event types are associated with two samples and should be saved twice in the text file
   - '11102202'
   - '11102211'
   - '11102441'
