@@ -144,7 +144,7 @@ sections:
     settings:
       <<        : *common
       sim_vers  : Sim10d-SplitSim02
-    event_type:
+    evt_type:
       - '13102465'
       - '13102464'
       - '13102202'
@@ -156,7 +156,7 @@ sections:
     settings:
       <<        : *common
       generator : BcVegPyPythia8
-    event_type:
+    evt_type:
       - '14175051'
       - '14143013'
       - '14113032'
