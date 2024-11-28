@@ -10,3 +10,4 @@ check_samples -i /home/acampove/Packages/config_files/ap_utilities/check_bkk/v1.
 ## Versions
 
 v1: First version
+v2: Adding more samples, using Renato's codimd samples, have 130
