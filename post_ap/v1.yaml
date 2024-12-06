@@ -371,8 +371,29 @@ transformations:
   hlt_lines:
     <<: *high_priority
     <<: *low_priority
+  categories:
+      bukee:
+      - Hlt2RD_BuToKpEE
+      - Hlt2RD_BuToKpEE_MVA
+      - Hlt2RD_BuToKpEE_MVA_cal
+      - Hlt2RD_BuToKpEE_MVA_noPID
+      - Hlt2RD_BuToKpEE_MVA_misid
+      bdkstee:
+      - Hlt2RD_B0ToKpPimEE
+      - Hlt2RD_B0ToKpPimEE_MVA
+      - Hlt2RD_B0ToKpPimEE_MVA_cal
+      - Hlt2RD_B0ToKpPimEE_MVA_noPID
+      - Hlt2RD_B0ToKpPimEE_MVA_misid
+      bukmm:
+      - Hlt2RD_BuToKpMuMu
+      - Hlt2RD_BuToKpMuMu_MVA
+      - Hlt2RD_BuToKpMuMu_MVA_noPID
+      bdkstmm:
+      - Hlt2RD_B0ToKpPimMuMu
+      - Hlt2RD_B0ToKpPimMuMu_MVA
+      - Hlt2RD_B0ToKpPimMuMu_MVA_noPID
   selection:
-    prescale: 1
+    evt_max : -1 
     cuts:
       any:
         L1Ghost: L1_TRGHOSTPROB < 0.5
@@ -398,7 +419,7 @@ transformations:
       lbpkmm:
         b_mass: B_const_mass_M > 4000 && B_const_mass_M < 5800
   saving:
-    max_events  : -1
+    evt_max : -1
     compression : 2
     store_branch: false
     tree_name:
