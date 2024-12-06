@@ -11,3 +11,5 @@ check_samples -i /home/acampove/Packages/config_files/ap_utilities/check_bkk/v1.
 
 v1: First version
 v2: Adding more samples, using Renato's codimd samples, have 130
+v3: Used to check the RX samples used in R1 and R2 that aren't present in MR for MC for Dec 06 2024
+
