@@ -26,6 +26,10 @@ productions:
       simulation: []
 # ------------------------------------------------
 transformations:
+  particle_variables:
+    # For EVERY particle, will define (or redefine) the variables below
+    P  : TMath::Sqrt( TMath::Sq(PARTICLE_PX) + TMath::Sq(PARTICLE_PY) + TMath::Sq(PARTICLE_PZ) )
+    PT : TMath::Sqrt( TMath::Sq(PARTICLE_PX) + TMath::Sq(PARTICLE_PY) )
   redefine_head:
     # This is needed due to the way the isolation head is defined for
     # cut based and mva based lines:
