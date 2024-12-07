@@ -6,3 +6,7 @@ These files are used to configure the slimming and filtering of ntuples
 
 First version to filter rd_2024_ap data
 
+## v2
+
+- Adding PT and P definitions for all particles 
+
