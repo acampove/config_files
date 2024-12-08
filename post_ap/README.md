@@ -10,3 +10,7 @@ First version to filter rd_2024_ap data
 
 - Adding PT and P definitions for all particles 
 
+## v3
+
+- Adding versions field instead of version. This is now a dictionary mapping sample with version
+
