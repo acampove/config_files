@@ -432,6 +432,13 @@ transformations:
     lines_phys_mm_cut:
       - Hlt2RD_BuToKpMuMu
       - Hlt2RD_B0ToKpPimMuMu
+    lines_sprucing:
+      - SpruceRD_BuToKpMuMu
+      - SpruceRD_BuToHpMuMu
+      - SpruceRD_B0ToKpPimMuMu
+      - SpruceRD_B0ToHpHmMuMu
+      - SpruceRD_B0ToKpPimEE
+      - SpruceRD_B0ToHpHmEE
   hlt_lines_high_priority: &high_priority
     lines_nopid:
       - Hlt2RD_BuToKpEE_MVA_noPID
