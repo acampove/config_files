@@ -140,10 +140,6 @@ transformations:
   define:
     #These defitions are done on top of the names stemming from the changes caused by `redefine_head`
     nTracks                           : nBackTracks + nDownstreamTracks + nLongTracks + nTTracks + nUpstreamTracks + nVeloTracks
-    B_VTXISODCHI2ONETRACK             : B_VTXISO_B_OneTrack_DChi2Vtx_9p0_Smallest_DELTACHI2
-    B_VTXISODCHI2MASSONETRACK         : B_VTXISO_B_OneTrack_DChi2Vtx_9p0_Smallest_DELTACHI2_MASS
-    B_VTXISODCHI2TWOTRACK             : B_VTXISO_B_TwoTracks_DChi2Vtx_9p0_Smallest_DELTACHI2
-    B_VTXISODCHI2MASSTWOTRACK         : B_VTXISO_B_TwoTracks_DChi2Vtx_9p0_Smallest_DELTACHI2_MASS
   rename:
     B_DTF_Jpsi_MASS                   : B_const_mass_M
     B_DTF_Jpsi_PX                     : B_const_mass_PX
