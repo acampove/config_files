@@ -338,6 +338,7 @@ transformations:
       - L1_HCAL 
       - L2_HCAL 
       # Hadron
+      - Hp_
       - H_BREM
       - H_ECAL
       - H_ELECTRON
