@@ -443,6 +443,7 @@ transformations:
     lines_sprucing:
       - SpruceRD_BuToKpMuMu
       - SpruceRD_BuToHpMuMu
+      - SpruceRD_BuToHpEE
       - SpruceRD_B0ToKpPimMuMu
       - SpruceRD_B0ToHpHmMuMu
       - SpruceRD_B0ToKpPimEE
